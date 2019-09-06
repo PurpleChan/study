@@ -33,4 +33,9 @@ public class CmsConfigService
             ExceptionCast.cast(CmsCode.CMS_GENERATEHTML_DATAISNULL);
         return optional.get();
     }
+
+    public void ceshi()
+    {
+        System.out.println("my name is chenzi!");
+    }
 }
