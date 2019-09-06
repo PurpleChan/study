@@ -1,0 +1,28 @@
+server:
+  port: ${port:31001}
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: xc_cms
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+  application:
+    name: xc-service-manage-cms
+xuecheng:
+  mq:
+    exchange: post_exchange
+eureka:
+  client:
+    register-with-eureka: true  #服务注册开关
+    fetch-registry: true  #服务发现开关
+    service-url:
+      defaultZone: http://localhost:50101/eureka/
+  instance:
+    prefer-ip-address: true  #将自己的ip注册到eureka中
+    ip-address: 127.0.0.1 #自己的ip
+    instance-id: ${cms-instance:xc-service-manage-cms:31001} #名称
